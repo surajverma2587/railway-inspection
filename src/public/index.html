@@ -1,88 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Railway Inspection</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/styles/index.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Railway Inspection</title>
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-</head>
-
-<body>
-  <div class="container py-4">
-    <h1>Railway Inspection</h1>
-    <form action="/api/station" method="POST">
-      <div class="form-row">
-        <div class="form-group col-12">
-          <label for="stationName">Station Name</label>
-          <input type="input" class="form-control" id="stationName">
+  <body>
+    <div class="container py-4">
+      <div class="card bg-dark text-white">
+        <img
+          class="card-img my-overlay"
+          src="assets/images/home.jpg"
+          alt="Card image"
+        />
+        <div class="card-img-overlay">
+          <h1>Railway Inspection</h1>
+          <form action="/api/station" method="POST">
+            <div class="form-row">
+              <div class="form-group col-12">
+                <label for="stationName">Station Name</label>
+                <input type="input" class="form-control" id="stationName" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-12">
+                <div>
+                  <label for="stationFacilities">Station Facilities</label>
+                </div>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-success btn-lg active">
+                    <input
+                      type="radio"
+                      name="stationFacilities"
+                      id="option1"
+                      value="good"
+                      autocomplete="off"
+                      checked
+                    />
+                    Good
+                  </label>
+                  <label class="btn btn-danger btn-lg">
+                    <input
+                      type="radio"
+                      name="stationFacilities"
+                      id="option2"
+                      value="bad"
+                      autocomplete="off"
+                    />
+                    Bad
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-12">
+                <div>
+                  <label for="stationRailways">Station Railways</label>
+                </div>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-success btn-lg active">
+                    <input
+                      type="radio"
+                      name="stationRailways"
+                      id="option1"
+                      value="good"
+                      autocomplete="off"
+                      checked
+                    />
+                    Good
+                  </label>
+                  <label class="btn btn-danger btn-lg">
+                    <input
+                      type="radio"
+                      name="stationRailways"
+                      id="option2"
+                      value="bad"
+                      autocomplete="off"
+                    />
+                    Bad
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-12">
+                <div>
+                  <label for="stationTrainStorage">Station Train Storage</label>
+                </div>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-success btn-lg active">
+                    <input
+                      type="radio"
+                      name="stationTrainStorage"
+                      id="option1"
+                      value="good"
+                      autocomplete="off"
+                      checked
+                    />
+                    Good
+                  </label>
+                  <label class="btn btn-danger btn-lg">
+                    <input
+                      type="radio"
+                      name="stationTrainStorage"
+                      id="option2"
+                      value="bad"
+                      autocomplete="off"
+                    />
+                    Bad
+                  </label>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
         </div>
       </div>
-      <div class="form-row">
-        <div class="form-group col-12">
-          <div>
-            <label for="stationFacilities">Station Facilities</label>
-          </div>
-          <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-success btn-lg active">
-              <input type="radio" name="stationFacilities" id="option1" value="good" autocomplete="off" checked> Good
-            </label>
-            <label class="btn btn-danger btn-lg">
-              <input type="radio" name="stationFacilities" id="option2" value="bad" autocomplete="off"> Bad
-            </label>
-          </div>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group col-12">
-          <div>
-            <label for="stationRailways">Station Railways</label>
-          </div>
-          <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-success btn-lg active">
-              <input type="radio" name="stationRailways" id="option1" value="good" autocomplete="off" checked> Good
-            </label>
-            <label class="btn btn-danger btn-lg">
-              <input type="radio" name="stationRailways" id="option2" value="bad" autocomplete="off"> Bad
-            </label>
-          </div>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group col-12">
-          <div>
-            <label for="stationTrainStorage">Station Train Storage</label>
-          </div>
-          <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-success btn-lg active">
-              <input type="radio" name="stationTrainStorage" id="option1" value="good" autocomplete="off" checked> Good
-            </label>
-            <label class="btn btn-danger btn-lg">
-              <input type="radio" name="stationTrainStorage" id="option2" value="bad" autocomplete="off"> Bad
-            </label>
-          </div>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </div>
+    </div>
 
-
-
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
-</body>
-
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
