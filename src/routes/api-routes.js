@@ -21,7 +21,7 @@ const addStation = async (req, res) => {
     });
     console.log(response);
     res.status(201).send({
-      message: "Station adding successfull",
+      message: "Station adding successful",
     });
   } catch (error) {
     console.log(`Something happened on the server: ${error.message}`);
